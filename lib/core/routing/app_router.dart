@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:uptodo/core/routing/routes.dart';
+import 'package:uptodo/features/onboarding/presentation/screen/onBoarding_screen.dart';
 
 
 class AppRouter {
@@ -9,9 +10,9 @@ class AppRouter {
 
     switch (settings.name) {
       case Routes.onBoardingScreen:
-        // return MaterialPageRoute(
-        //   builder: (_) => const OnboardingScreen(),
-        // );
+        return MaterialPageRoute(
+          builder: (_) => const OnBoardingScreen(),
+        );
       case Routes.loginScreen:
         // return MaterialPageRoute(
         //   builder: (_) => BlocProvider(
