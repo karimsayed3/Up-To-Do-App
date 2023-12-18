@@ -7,7 +7,12 @@ class TextStyles {
   static TextStyle font24BlackBold = TextStyle(
     fontSize: 24.sp,
     fontWeight: FontWeightHelper.bold,
-    color: Colors.black,
+    color: ColorsManager.offWhite,
+  );
+  static TextStyle font20OffWhiteBold = TextStyle(
+    fontSize: 20.sp,
+    fontWeight: FontWeightHelper.bold,
+    color: ColorsManager.offWhite,
   );
 
   static TextStyle font32BlueBold = TextStyle(
