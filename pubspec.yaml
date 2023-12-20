@@ -31,7 +31,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter:
     sdk: flutter
-  smooth_page_indicator: ^1.1.0
+
 
 dev_dependencies:
   dio: ^5.4.0
@@ -46,7 +46,7 @@ dev_dependencies:
   # rules and activating additional ones.
   flutter_lints: ^2.0.0
   flutter_native_splash: ^2.3.6
-
+  smooth_page_indicator: ^1.1.0
   # for adapting screen and font size.
   flutter_screenutil: ^5.9.0
   flutter_test:
