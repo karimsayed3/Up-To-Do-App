@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'package:uptodo/core/routing/routes.dart';
 import 'package:uptodo/core/theming/colors.dart';
 import 'package:uptodo/core/theming/styles.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -70,13 +71,11 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                     duration: const Duration(milliseconds: 300),
                     curve: Curves.easeInOut);
               },
-              onPressedNextButton:() {
+              onPressedNextButton: isLastPage?() {
                 /// TODO : Navigate to Next Page
-                isLastPage
-                    ? controller.previousPage(
-                    duration: const Duration(milliseconds: 300),
-                    curve: Curves.easeInOut)
-                    : controller.nextPage(
+                Navigator.pushNamedAndRemoveUntil(context, Routes.homeScreen, (route) => false);
+              } :(){
+                controller.nextPage(
                     duration: const Duration(milliseconds: 300),
                     curve: Curves.easeInOut);
               },

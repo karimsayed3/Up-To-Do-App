@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:uptodo/core/routing/routes.dart';
+import 'package:uptodo/features/home_screen/presentation/screen/home_screen.dart';
 import 'package:uptodo/features/onboarding/presentation/screen/onBoarding_screen.dart';
 
 
@@ -21,9 +22,9 @@ class AppRouter {
         //   ),
         // );
         case Routes.homeScreen:
-        // return MaterialPageRoute(
-        //   builder: (_) => const HomeScreen(),
-        // );
+        return MaterialPageRoute(
+          builder: (_) => const HomeScreen(),
+        );
       default:
         return MaterialPageRoute(
           builder: (_) => Scaffold(

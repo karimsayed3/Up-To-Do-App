@@ -17,7 +17,7 @@ class _UpToDoAppState extends State<UpToDoApp> {
  @override
   void initState() {
     super.initState();
-    initialization();
+    // initialization();
   }
 
   void initialization() async {
