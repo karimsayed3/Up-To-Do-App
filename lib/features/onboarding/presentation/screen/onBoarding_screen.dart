@@ -1,12 +1,15 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
-import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import 'package:uptodo/core/theming/colors.dart';
-import 'package:uptodo/core/theming/styles.dart';
+import 'package:uptodo/core/helper/extensions.dart';
+import '../../../../core/helper/cache_helper/cache_helper.dart';
+import '../../../../core/routing/routes.dart';
+import '../../../../core/theming/colors.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:uptodo/features/onboarding/presentation/widgets/navigate_buttons_widget.dart';
-import 'package:uptodo/features/onboarding/presentation/widgets/page_view_widget.dart';
-import 'package:uptodo/features/onboarding/presentation/widgets/skip_button_widget.dart';
-import 'package:uptodo/features/onboarding/presentation/widgets/smooth_indicator_widget.dart';
+import '../widgets/navigate_buttons_widget.dart';
+import '../widgets/page_view_widget.dart';
+import '../widgets/skip_button_widget.dart';
+import '../widgets/smooth_indicator_widget.dart';
 
 class OnBoardingScreen extends StatefulWidget {
   const OnBoardingScreen({super.key});
@@ -18,6 +21,17 @@ class OnBoardingScreen extends StatefulWidget {
 class _OnBoardingScreenState extends State<OnBoardingScreen> {
   PageController controller = PageController();
   bool isLastPage = false;
+
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    if(CacheHelper.getdata(key: 'onBoarding') =='onBoarding'){
+      Timer(Duration(milliseconds: 5), () {Navigator.pushNamedAndRemoveUntil(context, Routes.homeScreen,(route) => false,);});
+    }
+    super.initState();
+  }
+
 
   @override
   void dispose() {
@@ -70,13 +84,14 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                     duration: const Duration(milliseconds: 300),
                     curve: Curves.easeInOut);
               },
-              onPressedNextButton:() {
-                /// TODO : Navigate to Next Page
-                isLastPage
-                    ? controller.previousPage(
-                    duration: const Duration(milliseconds: 300),
-                    curve: Curves.easeInOut)
-                    : controller.nextPage(
+              onPressedNextButton:isLastPage ?() {
+                 CacheHelper.saveData(key: 'onBoarding', value: "onBoarding").then((value) {
+                   // next version of navigation between screens
+                   context.pushNamedAndRemoveUntil(Routes.homeScreen, predicate: (Route<dynamic> route) => false,);
+                   // Navigator.pushNamedAndRemoveUntil(context, Routes.homeScreen, (route) => false);
+                 });
+              }: () {
+                controller.nextPage(
                     duration: const Duration(milliseconds: 300),
                     curve: Curves.easeInOut);
               },

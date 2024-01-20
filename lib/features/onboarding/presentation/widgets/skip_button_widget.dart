@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:uptodo/core/theming/styles.dart';
+
+import '../../../../core/theming/styles.dart';
 
 class SkipButtonWidget extends StatelessWidget {
   const SkipButtonWidget({super.key, required this.controller, required this.onPressed});
