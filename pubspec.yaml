@@ -73,6 +73,8 @@ dev_dependencies:
   # for adapting screen and font size.
   flutter_screenutil: ^5.9.0
   flutter_svg: ^2.0.9
+  # for bottom nav bar
+  persistent_bottom_nav_bar: ^5.0.2
 
 
 # For information on the generic Dart part of this file, see the

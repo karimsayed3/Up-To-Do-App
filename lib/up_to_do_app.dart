@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:uptodo/core/routing/app_router.dart';
-import 'package:uptodo/core/theming/colors.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'core/routing/app_router.dart';
 import 'core/routing/routes.dart';
+import 'core/theming/colors.dart';
 class UpToDoApp extends StatefulWidget {
   const UpToDoApp({super.key,required this.appRouter});
   final AppRouter appRouter;
@@ -20,16 +20,16 @@ class _UpToDoAppState extends State<UpToDoApp> {
     // initialization();
   }
 
-  void initialization() async {
-    print('ready in 3...');
-    await Future.delayed(const Duration(seconds: 1));
-    print('ready in 2...');
-    await Future.delayed(const Duration(seconds: 1));
-    print('ready in 1...');
-    await Future.delayed(const Duration(seconds: 1));
-    print('go!');
-    FlutterNativeSplash.remove();
-  }
+  // void initialization() async {
+  //   print('ready in 3...');
+  //   await Future.delayed(const Duration(seconds: 1));
+  //   print('ready in 2...');
+  //   await Future.delayed(const Duration(seconds: 1));
+  //   print('ready in 1...');
+  //   await Future.delayed(const Duration(seconds: 1));
+  //   print('go!');
+  //   FlutterNativeSplash.remove();
+  // }
 
     @override
   Widget build(BuildContext context) {
