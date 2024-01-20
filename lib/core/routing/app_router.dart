@@ -5,6 +5,8 @@ import 'routes.dart';
 import '../../features/home_screen/presentation/screen/home_screen.dart';
 import '../../features/onboarding/presentation/screen/onBoarding_screen.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:uptodo/core/routing/routes.dart';
+
 
 class AppRouter {
   Route generateRoute(RouteSettings settings) {
@@ -30,6 +32,7 @@ class AppRouter {
                 value: getIt<HomeCubit>(),
                 child: HomeScreen(),
               ),
+
         );
       default:
         return MaterialPageRoute(
